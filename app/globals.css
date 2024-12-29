@@ -1,0 +1,77 @@
+/* app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --green-glow: 0 0 10px rgba(74, 222, 128, 0.2);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-gray-900;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-green-400/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-green-400;
+}
+
+/* Glitch effect */
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 rgba(74, 222, 128, 0.75),
+                -0.05em -0.025em 0 rgba(255, 255, 255, 0.75),
+                -0.025em 0.05em 0 rgba(0, 255, 0, 0.75);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 rgba(74, 222, 128, 0.75),
+                -0.05em -0.025em 0 rgba(255, 255, 255, 0.75),
+                -0.025em 0.05em 0 rgba(0, 255, 0, 0.75);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 rgba(74, 222, 128, 0.75),
+                0.025em 0.025em 0 rgba(255, 255, 255, 0.75),
+                -0.05em -0.05em 0 rgba(0, 255, 0, 0.75);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 rgba(74, 222, 128, 0.75),
+                0.025em 0.025em 0 rgba(255, 255, 255, 0.75),
+                -0.05em -0.05em 0 rgba(0, 255, 0, 0.75);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(74, 222, 128, 0.75),
+                0.05em 0 0 rgba(255, 255, 255, 0.75),
+                0 -0.05em 0 rgba(0, 255, 0, 0.75);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 rgba(74, 222, 128, 0.75),
+                0.05em 0 0 rgba(255, 255, 255, 0.75),
+                0 -0.05em 0 rgba(0, 255, 0, 0.75);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 rgba(74, 222, 128, 0.75),
+                -0.025em -0.025em 0 rgba(255, 255, 255, 0.75),
+                -0.025em -0.05em 0 rgba(0, 255, 0, 0.75);
+  }
+}
+
+.text-glitch:hover {
+  animation: glitch 1s linear infinite;
+}
